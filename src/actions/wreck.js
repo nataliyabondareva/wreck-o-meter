@@ -16,8 +16,20 @@ const formatLocation = location => {
 
 // formats a string to get the number in it 
 const stringToNumber = string => {
-  return string.replace(/\D/g,'')
+  const firstLetter = string.match(/[a-zA-Z]/).pop();
+  const firstNumber = parseFloat(string, 10);
+  switch (firstLetter) {
+    case 'm':
+      return firstNumber*1000000;
+      break;
+    case 'k':
+      return firstNumber*1000;
+      break
+  }
 }
+  // string.match(/[0-1000000/]).pop();
+  // return string.replace(/\D/g,'')
+//}
 
 //checks whether 
 export const checkWreck = location => dispatch => {
