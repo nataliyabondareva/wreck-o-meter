@@ -6,22 +6,13 @@ module.exports = class wreckChecker {
     let key = API_KEY;
     let timesHashtagged = await this.getTimesHashtagged(location, key);
     let locationInformation = await this.getLocationInformation(location);
-    // let wreck = await this.getWreck(timesHashtagged, locationInformation);
-    const wreck = timesHashtagged / locationInformation;
-    console.log("params", wreck, timesHashtagged, locationInformation);
+    const wreck = timesHashtagged / locationInformation.area;
+    console.log("wreck is", wreck);
     return { locationInformation };
   }
-  // return wreck(timesHashtagged, locationInformation)
-  // }
-
-  // gets popularity by dividing the times hashtagged by area and returns it along with population density
-  // async getWreck(timesHashtagged, locationInformation) {
-  //   console.log('locinfo', timesHashtagged, locationInformation)
-  //   let wreck = timesHashtagged / locationInformation.area;
-  //   return {wreck}
-  // }
-
+  
   async getLocationInformation(location) {
+    const locationInformation = 
     request
       .get(
         `https://restcountries.eu/rest/v2/capital/${location}?fields=population;area`
@@ -35,6 +26,7 @@ module.exports = class wreckChecker {
       .then(response => {
         return response;
       });
+      return locationInformation;
   }
 
   // gets number of times location was used as hashtag
@@ -71,6 +63,7 @@ module.exports = class wreckChecker {
 
     // gets number of times location was hashtagged
     let formattedLocation = formatLocation(location);
+    const timesHashtagged =
     request
       .get(
         `https://www.googleapis.com/customsearch/v1?q=${formattedLocation}&cx=007962097164152155274:_9jk37_iaew&key=${key}`
@@ -83,10 +76,7 @@ module.exports = class wreckChecker {
         // takes string with the value, converts into number
         return stringToNumber(result.snippet);
       })
-      .then(result => console.log('hi there', result))
-      // .then((
-      //   result // dispatches it into redux store
-      // ) => dispatch(wreckChecked(result)))
       .catch(console.error);
+      return timesHashtagged
   }
 };
