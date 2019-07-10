@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {checkWreck} from '../actions/wreck'
 import MeterForm from './MeterForm'
+import { API_KEY } from "../app-env";
 
 class MeterFormContainer extends React.Component {
   state = {
@@ -17,7 +18,7 @@ class MeterFormContainer extends React.Component {
   onSubmit = event => {
     event.preventDefault();
 
-    this.props.checkWreck(this.state.location)
+    this.props.checkWreck(this.state.location, API_KEY)
   }
 
   render() {
