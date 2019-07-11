@@ -8,7 +8,7 @@ This is a tool to measure how popular on Instagram a capital city is, returning 
 * npm install
 * npm run start
 
-You'll need an API key to use this, which you can create [here] (https://developers.google.com/custom-search/v1/overview)... or email talbondareva@gmail.com (who is currently working on proper authorisation) for one :-)
+You'll need an API key to use this, which you can create [here](https://developers.google.com/custom-search/v1/overview)... or email talbondareva@gmail.com (who is currently working on proper authorisation) for one :-)
 
 ### The algorithm
 
