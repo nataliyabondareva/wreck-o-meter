@@ -1,33 +1,37 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+
+body {
+  background-color: pink;
+  font-family: 'Nunito Sans', sans-serif;
+  display: flex;
+  margin: 2em;
+  /* background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%,  45%,#d6249f 60%,#285AEB 90%); */
+  /* padding: 2em; */
+
+}
+/* .links {
+  background-color: whitesmoke;
+  text-align: center;
+  padding: 1em;
+  margin: 2em;
+} */
+.title {
+  font-size: 2em;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.form {
+  text-align: center
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.WreckDisplay {
+  text-align: center;
+  font-size: 1.5em;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.body {
+  background-color: whitesmoke;
+  text-align: center;
+  padding: 1em;
+  margin: 2em;
 }
