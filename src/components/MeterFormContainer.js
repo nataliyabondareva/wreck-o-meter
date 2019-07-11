@@ -24,6 +24,7 @@ class MeterFormContainer extends React.Component {
   render() {
     return(
       <MeterForm
+      wreck={this.props.wreck}
       onSubmit={this.onSubmit}
       onChange={this.onChange}
       values={this.state}
@@ -33,7 +34,7 @@ class MeterFormContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  location: state.location
+  wreck: state.wreck
 })
 
 export default connect(mapStateToProps, {checkWreck})(MeterFormContainer)

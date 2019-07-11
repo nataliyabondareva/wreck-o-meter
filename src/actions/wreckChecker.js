@@ -7,8 +7,9 @@ module.exports = class wreckChecker {
     let timesHashtagged = await this.getTimesHashtagged(location, key);
     let locationInformation = await this.getLocationInformation(location);
     const wreck = timesHashtagged / locationInformation.area;
-    console.log("wreck is", wreck);
-    return { locationInformation };
+    const populationDensity = locationInformation.populationDensity;
+    console.log("wreck is", wreck, );
+    return { wreck, populationDensity };
   }
   
   async getLocationInformation(location) {

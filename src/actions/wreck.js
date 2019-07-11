@@ -9,10 +9,10 @@ export const checkWreck = (location, key) => dispatch =>
   const wreck = checkTheWreck.checkWreck(location, key)
   //let wreck = 
   // wreckChecker.checkWreck(location, key, request)
-  // .then(( // dispatches it into redux store
-  //   wreck) => 
-  //   dispatch(wreckChecked(wreck)))
-  //       .catch(console.error);
+  .then(( // dispatches it into redux store
+    wreck) => 
+    dispatch(wreckChecked(wreck)))
+        .catch(console.error);
 }
 
 // const wreckChecker = new wreckChecker();
