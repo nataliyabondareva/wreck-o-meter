@@ -8,7 +8,6 @@ module.exports = class wreckChecker {
     let locationInformation = await this.getLocationInformation(location);
     const wreck = timesHashtagged / locationInformation.area;
     const populationDensity = locationInformation.populationDensity;
-    console.log("wreck is", wreck, );
     return { wreck, populationDensity };
   }
   
