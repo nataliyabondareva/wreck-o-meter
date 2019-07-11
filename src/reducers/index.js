@@ -1,6 +1,5 @@
-import wreck from './wreck'
-
+import wreck from "./wreck";
 
 export default {
   wreck
-}
+};

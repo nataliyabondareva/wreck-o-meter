@@ -10,10 +10,10 @@ module.exports = class wreckChecker {
     const populationDensity = locationInformation.populationDensity;
     return { wreck, populationDensity };
   }
-  
+
+  // requests area and population of location
   async getLocationInformation(location) {
-    const locationInformation = 
-    request
+    const locationInformation = request
       .get(
         `https://restcountries.eu/rest/v2/capital/${location}?fields=population;area`
       )
@@ -26,12 +26,13 @@ module.exports = class wreckChecker {
       .then(response => {
         return response;
       });
-      return locationInformation;
+    return locationInformation;
   }
 
   // gets number of times location was used as hashtag
   async getTimesHashtagged(location, key) {
     // picks the object from json data that is the pure hashtag
+    
     const correctItem = (items, location) => {
       return items.find(item => {
         return item.link.includes(
@@ -63,8 +64,7 @@ module.exports = class wreckChecker {
 
     // gets number of times location was hashtagged
     let formattedLocation = formatLocation(location);
-    const timesHashtagged =
-    request
+    const timesHashtagged = request
       .get(
         `https://www.googleapis.com/customsearch/v1?q=${formattedLocation}&cx=007962097164152155274:_9jk37_iaew&key=${key}`
       )
@@ -77,6 +77,6 @@ module.exports = class wreckChecker {
         return stringToNumber(result.snippet);
       })
       .catch(console.error);
-      return timesHashtagged
+    return timesHashtagged;
   }
 };
